@@ -30,10 +30,5 @@ namespace AjengKripto
         {
             return Enchiper(input, 26 - key);
         }
-
-        internal static object Decipher(object v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
