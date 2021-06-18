@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiperAlgorithm.cs" />
+    <Compile Include="CipherAlgorithmCustom.cs" />
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>

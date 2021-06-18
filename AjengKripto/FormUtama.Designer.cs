@@ -63,11 +63,11 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(211, 20);
+            this.labelTitle.Location = new System.Drawing.Point(35, 19);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(218, 26);
+            this.labelTitle.Size = new System.Drawing.Size(582, 26);
             this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Cipher Text CRUD";
+            this.labelTitle.Text = "Pengamanan Database Menggunakan Cipher Text";
             this.labelTitle.Click += new System.EventHandler(this.labelTitle_Click);
             // 
             // labelNL

@@ -50,12 +50,12 @@ namespace AjengKripto
             koneksi.adp.Fill(dt);
             foreach (DataRow row in dt.Rows)
             {
-                row["nama"] = ChiperAlgorithm.Decipher(row["nama"].ToString(), customkey);
-                row["tempat_lahir"] = ChiperAlgorithm.Decipher(row["tempat_lahir"].ToString(), customkey);
-                row["tanggal_lahir"] = ChiperAlgorithm.Decipher(row["tanggal_lahir"].ToString(), customkey);
-                row["jenis_kelamin"] = ChiperAlgorithm.Decipher(row["jenis_kelamin"].ToString(), customkey);
-                row["alamat"] = ChiperAlgorithm.Decipher(row["alamat"].ToString(), customkey);
-                row["kelas"] = ChiperAlgorithm.Decipher(row["kelas"].ToString(), customkey);
+                row["nama"] = CipherAlgorithmCustom.Decipher(row["nama"].ToString(), customkey);
+                row["tempat_lahir"] = CipherAlgorithmCustom.Decipher(row["tempat_lahir"].ToString(), customkey);
+                row["tanggal_lahir"] = CipherAlgorithmCustom.Decipher(row["tanggal_lahir"].ToString(), customkey);
+                row["jenis_kelamin"] = CipherAlgorithmCustom.Decipher(row["jenis_kelamin"].ToString(), customkey);
+                row["alamat"] = CipherAlgorithmCustom.Decipher(row["alamat"].ToString(), customkey);
+                row["kelas"] = CipherAlgorithmCustom.Decipher(row["kelas"].ToString(), customkey);
             }
             dg.DataSource = dt;
             dg.Columns[0].Visible = false;
@@ -100,12 +100,12 @@ namespace AjengKripto
                     if (rbPria.Checked) jk = "Pria";
                     else jk = "Wanita";
                     koneksi.cud("INSERT INTO DATA(nama,tempat_lahir,tanggal_lahir,jenis_kelamin,alamat,kelas) values('" 
-                        + ChiperAlgorithm.Enchiper(textNamaLengkap.Text, customkey) +
-                        "','" + ChiperAlgorithm.Enchiper(textTempat.Text, customkey) + "','" +
-                        ChiperAlgorithm.Enchiper(dateTimePickerTL.Text, customkey) + "','" +
-                        ChiperAlgorithm.Enchiper(jk, customkey) + "','" +
-                        ChiperAlgorithm.Enchiper(richtextAlamat.Text, customkey) +
-                        "','" + ChiperAlgorithm.Enchiper(textKelas.Text, customkey) + "')");
+                        + CipherAlgorithmCustom.Enchiper(textNamaLengkap.Text, customkey) +
+                        "','" + CipherAlgorithmCustom.Enchiper(textTempat.Text, customkey) + "','" +
+                        CipherAlgorithmCustom.Enchiper(dateTimePickerTL.Text, customkey) + "','" +
+                        CipherAlgorithmCustom.Enchiper(jk, customkey) + "','" +
+                        CipherAlgorithmCustom.Enchiper(richtextAlamat.Text, customkey) +
+                        "','" + CipherAlgorithmCustom.Enchiper(textKelas.Text, customkey) + "')");
                     MessageBox.Show("Data Berhasil Ditambahkan");
                 }
             }
@@ -203,7 +203,7 @@ namespace AjengKripto
                 {
                     if (rbPria.Checked) jk = "Pria";
                     else jk = "Wanita";
-                    koneksi.cud("UPDATE data SET nama='" + ChiperAlgorithm.Enchiper(textNamaLengkap.Text, customkey) + "', tempat_lahir='" + ChiperAlgorithm.Enchiper(textTempat.Text, customkey) + "',tanggal_lahir='" + ChiperAlgorithm.Enchiper(dateTimePickerTL.Text, customkey) + "',jenis_kelamin='" + ChiperAlgorithm.Enchiper(jk, customkey) + "', alamat='" + ChiperAlgorithm.Enchiper(richtextAlamat.Text, customkey) + "', kelas='" + ChiperAlgorithm.Enchiper(textKelas.Text, customkey) + "' WHERE id='" + getId + "'");
+                    koneksi.cud("UPDATE data SET nama='" + CipherAlgorithmCustom.Enchiper(textNamaLengkap.Text, customkey) + "', tempat_lahir='" + CipherAlgorithmCustom.Enchiper(textTempat.Text, customkey) + "',tanggal_lahir='" + CipherAlgorithmCustom.Enchiper(dateTimePickerTL.Text, customkey) + "',jenis_kelamin='" + CipherAlgorithmCustom.Enchiper(jk, customkey) + "', alamat='" + CipherAlgorithmCustom.Enchiper(richtextAlamat.Text, customkey) + "', kelas='" + CipherAlgorithmCustom.Enchiper(textKelas.Text, customkey) + "' WHERE id='" + getId + "'");
                     MessageBox.Show("Data Berhasil Diperbaharui");
                 }
             }
